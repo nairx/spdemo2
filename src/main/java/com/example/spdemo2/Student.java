@@ -1,0 +1,20 @@
+package com.example.spdemo2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student {
+
+    private MessageService messageService;
+
+    @Autowired
+    public Student(MessageService messageService){
+        this.messageService = messageService;
+    }
+
+    public void study(){
+        System.out.println("Student is studying...");
+        messageService.displayMessage();
+    }
+    
+}
